@@ -63,6 +63,8 @@ public class DataAnalyzer {
     public static void main(String[] args) {
 
         int[] bruh = {0,1,2,3,4};
+        System.out.println(LinearSearch(bruh, 2));
+        System.out.println(BinarySearch(bruh, 4));
         System.out.println(ReverseListToString(ReverseList(bruh)));
     }
 }
