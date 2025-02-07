@@ -66,6 +66,7 @@ public class DataAnalyzer {
 
     public static void main(String[] args) {
 
+<<<<<<< HEAD
         int[] numbers = new int[100];        
 
         try {
@@ -86,5 +87,11 @@ public class DataAnalyzer {
         System.out.println(LinearSearch(numbers, 35));
         System.out.println(BinarySearch(numbers, 35));
         System.out.println(ReverseListToString(ReverseList(numbers)));
+=======
+        int[] bruh = {0,1,2,3,4};
+        System.out.println(LinearSearch(bruh, 2));
+        System.out.println(BinarySearch(bruh, 4));
+        System.out.println(ReverseListToString(ReverseList(bruh)));
+>>>>>>> 01613fdbe5a092532eb13d359dd56990e1eb223f
     }
 }
