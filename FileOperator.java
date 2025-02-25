@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileOperator {
@@ -50,8 +51,45 @@ public class FileOperator {
         return array;
     }
 
+    public ArrayList<String> toStringList() {
+        ArrayList<String> result = new ArrayList<>();
+        try (Scanner scanner = new Scanner(new File(filePath))) {;
+            while (scanner.hasNextLine()) {
+                result.add(scanner.nextLine());
+            } 
+        }
+        catch (FileNotFoundException e) {System.out.println("File not found: " + filePath);}
+            
+        
+        return result;
+    }
+
+    public ArrayList<Integer> toIntList() {
+        ArrayList<Integer> result = new ArrayList<>();
+        try (Scanner scanner = new Scanner(new File(filePath))) {;
+            while (scanner.hasNextLine()) {
+                result.add(scanner.nextInt());
+            } 
+        }
+        catch (FileNotFoundException e) {System.out.println("File not found: " + filePath);}
+            
+        
+        return result;
+    }public ArrayList<Double> toDoubleList() {
+        ArrayList<Double> result = new ArrayList<>();
+        try (Scanner scanner = new Scanner(new File(filePath))) {;
+            while (scanner.hasNextLine()) {
+                result.add(scanner.nextDouble());
+            } 
+        }
+        catch (FileNotFoundException e) {System.out.println("File not found: " + filePath);}
+            
+        
+        return result;
+    }
+
     public static void main(String[] args) {
-        FileOperator fileOperator = new FileOperator("test.txt"); // insert file here i guess
+        FileOperator fileOperator = new FileOperator("artists.txt"); // insert file here i guess
 
         // arraySize must be known for the code to work
         String[] stringArray = fileOperator.toStringArray(500); // random test value
